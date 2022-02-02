@@ -16,15 +16,25 @@
   git remote add origin <link>
   git checkout --orphan <new_branch_name>
   ```
-  * At this point, you would have created a new branch which is totally unrelated to other branches (hence `--orphan`), you can check here.
+  * `<new_branch_name>` should preferrably be your name. At this point, you would have created a new branch which is totally independent of other branches (hence `--orphan`), you can check here.
 
   <img src="./artifacts/new_branch.png">
 
-  * All you need to do now is add your `netbeans_app` to this new branch
+  * All you need to do now is add your projects to this new branch
 
   ```
   git add .
   git commit -m "initial commit"
+  git push origin <new_branch_name>
+  ```
+
+## **Subsequent commits**
+
+  * Use your current local directory from now on to make any changes. To commit your changes after the initial setup, simply follow the below set of commands.
+
+  ```
+  git add .
+  git commit -m <commit message>
   git push origin <new_branch_name>
   ```
 
