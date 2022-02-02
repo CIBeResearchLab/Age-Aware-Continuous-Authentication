@@ -1,6 +1,6 @@
 # **Continuous Authentication Project**
 
-### *This repo maintains the codebase involved in CA project. The repo should always contain the latest code for individual application. The detailed process to clone the repo for the first time and commit multiple projects is given below*
+### *This repo maintains the codebase involved in CA project. The repo should always contain the latest code for individual application. The detailed process to setup the repo for the first time and commit multiple projects is given below*
 
 ## **Add your project for the first time.**
   * You guys might have written multiple projects till now (for example liza has a `netbeans` app for the laptop as well as a `keylogger` mobile app for the phone). Due to this, you might need to add them as separate directories in git repo.
@@ -13,7 +13,7 @@
   ```
   cd parent_dir
   git init
-  git remote add origin <link>
+  git remote add origin https://github.com/ciberatusf/Age-Aware-Continuous-Authentication.git
   git checkout --orphan <new_branch_name>
   ```
   * `<new_branch_name>` should preferrably be your name. At this point, you would have created a new branch which is totally independent of other branches (hence `--orphan`), you can check here.
