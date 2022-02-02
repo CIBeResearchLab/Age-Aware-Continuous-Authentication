@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/q1_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/neutral_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/hor2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="@id/hor1"
+        app:srcCompat="@drawable/neutral" />
+
+    <ImageButton
+        android:id="@+id/disgust_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/hor4"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="@id/hor3"
+        app:srcCompat="@drawable/disgust" />
+
+    <ImageButton
+        android:id="@+id/fear_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/hor6"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="@id/hor5"
+        app:srcCompat="@drawable/fear" />
+
+    <ImageButton
+        android:id="@+id/sad_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/hor8"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="@id/hor7"
+        app:srcCompat="@drawable/sad" />
+
+    <ImageButton
+        android:id="@+id/happy_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/hor2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor1"
+        app:srcCompat="@drawable/happy" />
+
+    <ImageButton
+        android:id="@+id/surprise_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintTop_toTopOf="@id/hor3"
+        app:layout_constraintBottom_toBottomOf="@id/hor4"
+        app:srcCompat="@drawable/surprise" />
+
+    <ImageButton
+        android:id="@+id/angry_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/hor6"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor5"
+        app:srcCompat="@drawable/angry" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:text="@string/next_btn_text"
+        app:layout_constraintBottom_toBottomOf="@id/hor12"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor8" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/q1_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/hor1"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <CheckBox
+        android:id="@+id/neutral_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/neutral_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@id/hor2"
+        app:layout_constraintBottom_toBottomOf="@id/hor9"
+        />
+<!--    <RadioButton-->
+<!--        android:id="@+id/neutral_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/neutral_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor2"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor9"/>-->
+
+    <CheckBox
+        android:id="@+id/happy_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/happy_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintTop_toTopOf="@id/hor2"
+        app:layout_constraintBottom_toBottomOf="@id/hor9"
+        />
+<!--    <RadioButton-->
+<!--        android:id="@+id/happy_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/happy_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver3"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver4"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor2"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor9"/>-->
+
+    <CheckBox
+        android:id="@+id/disgust_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/disgust_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@id/hor4"
+        app:layout_constraintBottom_toBottomOf="@id/hor10"
+        />
+
+<!--    <RadioButton-->
+<!--        android:id="@+id/disgust_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/disgust_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor4"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor10"/>-->
+
+    <CheckBox
+        android:id="@+id/surprise_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/surprise_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintTop_toTopOf="@id/hor4"
+        app:layout_constraintBottom_toBottomOf="@id/hor10"/>
+
+<!--    <RadioButton-->
+<!--        android:id="@+id/surprise_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/surprise_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver3"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver4"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor4"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor10"/>-->
+
+    <CheckBox
+        android:id="@+id/fear_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/fear_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@id/hor6"
+        app:layout_constraintBottom_toBottomOf="@id/hor11"/>
+
+<!--    <RadioButton-->
+<!--        android:id="@+id/fear_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/fear_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor6"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor11"/>-->
+
+    <CheckBox
+        android:id="@+id/angry_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/angry_lbl"
+        app:layout_constraintBottom_toBottomOf="@id/hor11"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor6" />
+
+<!--    <RadioButton-->
+<!--        android:id="@+id/angry_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/surprise_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver3"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver4"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor6"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor11"/>-->
+
+    <CheckBox
+        android:id="@+id/sad_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sad_lbl"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@id/hor8"
+        app:layout_constraintBottom_toBottomOf="@id/hor12"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <EditText
+        android:id="@+id/other_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="If other, Enter your answer here."
+        android:inputType="textMultiLine"
+        android:text="@null"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/hor8"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver_mid"
+        app:layout_constraintTop_toTopOf="@id/hor7" />
+
+<!--    <RadioButton-->
+<!--        android:id="@+id/other_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:text="Other"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor8"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver4"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver3"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor7" />-->
+
+    <!--    <RadioButton-->
+<!--        android:id="@+id/sad_rb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/sad_lbl"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver1"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/hor8"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/hor12"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
