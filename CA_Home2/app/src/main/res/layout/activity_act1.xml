@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp">
+
+    <ImageView
+        android:id="@+id/usf_logo"
+        android:layout_width="71dp"
+        android:layout_height="89dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="left"
+        android:layout_marginStart="-3dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/usf" />
+
+    <View
+        android:id="@+id/line_yellow"
+        android:layout_width="350dp"
+        android:layout_height="47dp"
+        android:layout_below="@id/line_green"
+        android:layout_gravity="right"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFFF99" />
+
+    <View
+        android:id="@+id/line_green"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_gravity="right"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="0dp"
+        android:background="#335422" />
+
+    <TextView
+        android:id="@+id/task_name"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@id/line_yellow"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:text="Enter Each password 5 times"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txt_pass"
+        android:layout_width="163dp"
+        android:layout_height="53dp"
+        android:layout_below="@id/line_yellow"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="158dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_input1"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_alignLeft="@+id/txt_pass"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="85dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_input2"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_alignLeft="@+id/txt_pass"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="149dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_input4"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_alignLeft="@+id/txt_pass"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="286dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_input5"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_alignLeft="@+id/txt_pass"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="349dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txt_input3"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_alignLeft="@+id/txt_pass"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="220dp"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_nextPass"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_marginTop="494dp"
+        android:layout_marginRight="-328dp"
+        android:layout_toLeftOf="@+id/txt_pass"
+        android:text="Next Password" />
+
+    <Button
+        android:id="@+id/btn_restart"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_yellow"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="493dp"
+        android:layout_marginRight="-145dp"
+        android:layout_toLeftOf="@+id/txt_pass"
+        android:text="restart Task" />
+
+
+</RelativeLayout>
