@@ -38,3 +38,19 @@
   git push origin <new_branch_name>
   ```
 
+## **If you want to replicate your remote code on a new machine and make updates**
+
+```
+git clone https://github.com/ciberatusf/Age-Aware-Continuous-Authentication.git
+git checkout <your_branch_name>
+```
+
+`Do some work...`
+
+```
+git add .
+git commit -m <commit message>
+git push origin <your_branch_name>
+```
+
+
