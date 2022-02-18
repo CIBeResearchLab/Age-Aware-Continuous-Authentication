@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         int pointerId = event.getPointerId(actionIndex);
 
         String path = Environment.getExternalStorageDirectory() +"/";
+
         Log.d("Test", path);
 
 
