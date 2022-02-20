@@ -1,9 +1,12 @@
 # **Code to generate mouse movement data**
 
-## **1. Setup**
+## **1. Setup for first time**
 ```
+git clone 
 pip install -r requirements.txt
 ```
+
+ 2. The code has been placed in the path `/Desktop/saandeep/mouse_tracker`
 
 ## **2. Generate raw data**
 ```
