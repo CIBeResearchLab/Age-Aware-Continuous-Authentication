@@ -48,7 +48,7 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
     private String name;
     private WebSocket webSocket;
-    private String SERVER_PATH = "ws://10.224.136.109:3000"; //10.224.136.109
+    private String SERVER_PATH = "ws://10.224.142.53:3000"; //10.224.136.109
     private EditText messageEdit;
     private View sendBtn, pickImgBtn;
     private RecyclerView recyclerView;
@@ -143,9 +143,24 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
                     recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
 
+                    String path = Environment.getExternalStorageDirectory() +"/";
+                    File file = new File(path, "chat_Communication.txt");
+                    Date currentTime = Calendar.getInstance().getTime();
+                    String OutputReceived = jsonObject.toString() +String.valueOf(currentTime) + "\n";
+                    FileOutputStream fileOutputStream = null;
+                    try {
+                        fileOutputStream = new FileOutputStream(file, true);
+                        fileOutputStream.write(OutputReceived.getBytes());
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
 
             });
 
@@ -187,6 +202,19 @@ public class ChatActivity extends AppCompatActivity implements TextWatcher {
                 e.printStackTrace();
             }
 
+            String path = Environment.getExternalStorageDirectory() +"/";
+            File file = new File(path, "chat_Communication.txt");
+            Date currentTime = Calendar.getInstance().getTime();
+            String OutputReceived = jsonObject.toString() +String.valueOf(currentTime)+ "\n";
+            FileOutputStream fileOutputStream = null;
+            try {
+                fileOutputStream = new FileOutputStream(file, true);
+                fileOutputStream.write(OutputReceived.getBytes());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         pickImgBtn.setOnClickListener(v -> {
