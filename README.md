@@ -8,6 +8,10 @@ Current software for user authentication relies on the user to directly initiate
 - Sandeep Lakshminarayan
 - Liza Jivnani
 - Nicolas Ng Wai
+- Tara Nourivandi
+- Kevin Antony
+- Orestes Bringas
+- Param Chokshi
 
 ## Faculty Supervisors
 - [Dr. Tempestt Neal, Cyber Identity and Behavior Research Lab, University of South Florida, PI](https://cse.usf.edu/~tjneal/)
