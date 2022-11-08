@@ -1066,7 +1066,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
         pressKeys.add(nMap2);
 
-//        Log.d("INFO: ", "onRelease: " + String.valueOf(releaseKeys));
+//        Log.d("INFO: ", "onRelease: " + String.valueOf(primaryCode));
 //        Log.d("INFO", "------");
 //        acc_list.clear();
     }
