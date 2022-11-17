@@ -1,0 +1,4 @@
+pathlib
+zxcvbn
+python-docx
+matplotlib
