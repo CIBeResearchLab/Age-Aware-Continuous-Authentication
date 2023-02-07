@@ -53,11 +53,17 @@ public class act1 extends AppCompatActivity {
 
         List<String> pass_list = new ArrayList<String>();
 
-        pass_list.add("GmxPV3L");
-        pass_list.add("Nv5PHS!8kP8");
-        pass_list.add("jxK&5sDpwfE+U");
+//        pass_list.add("GmxPV3L");
+//        pass_list.add("Nv5PHS!8kP8");
+//        pass_list.add("jxK&5sDpwfE+U");
+//
+//        txt_pass.setText("GmxPV3L");
 
-        txt_pass.setText("GmxPV3L");
+        pass_list.add("schoolRocks");
+        pass_list.add("g@me&play");
+        pass_list.add("GmxPV3L");
+
+        txt_pass.setText("schoolRocks");
 
         btn_nextPass.setOnClickListener(new View.OnClickListener() {
                     int count = 0;

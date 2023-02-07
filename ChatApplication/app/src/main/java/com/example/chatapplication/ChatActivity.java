@@ -1,45 +1,59 @@
-package com.example.ca_home;
+package com.example.chatapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Enumeration;
 
-public class act2 extends AppCompatActivity {
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
 
-    EditText act2_input11;
-    EditText act2_input12;
+public class ChatActivity extends AppCompatActivity implements TextWatcher {
 
-    EditText act2_input21;
-    EditText act2_input22;
 
-    EditText act2_input31;
-    EditText act2_input32;
-
-    EditText act2_input41;
-    EditText act2_input42;
-
-    EditText act2_input51;
-    EditText act2_input52;
-
-    Button act2_btn_submit;
-    Button act2_btn_restart;
+    private String name;
+    private WebSocket webSocket;
+    private String SERVER_PATH = "ws://10.224.143.159:3000";  //10.224.142.53:3000" //10.224.136.109
+    private EditText messageEdit;
+    private View sendBtn, pickImgBtn;
+    private RecyclerView recyclerView;
+    private int IMAGE_REQUEST_ID = 1;
+    private MessageAdapter messageAdapter;
 
 
 
@@ -47,200 +61,221 @@ public class act2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act2);
+        setContentView(R.layout.activity_chat);
 
+        name = getIntent().getStringExtra("name");
+        initiateSocketConnection();
 
-        act2_input11 = findViewById(R.id.act2_input11);
-        act2_input12 = findViewById(R.id.act2_input12);
-        act2_input21 = findViewById(R.id.act2_input21);
-        act2_input22 = findViewById(R.id.act2_input22);
-        act2_input31 = findViewById(R.id.act2_input31);
-        act2_input32 = findViewById(R.id.act2_input32);
-        act2_input41 = findViewById(R.id.act2_input41);
-        act2_input42 = findViewById(R.id.act2_input42);
-        act2_input51 = findViewById(R.id.act2_input51);
-        act2_input52 = findViewById(R.id.act2_input52);
-
-        act2_btn_submit = findViewById(R.id.act2_btn_submit);
-        act2_btn_restart = findViewById(R.id.act2_btn_restart);
-
-        act2_btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                /*if(act2_input11.getText().toString().isEmpty() | act2_input12.getText().toString().isEmpty() | act2_input21.getText().toString().isEmpty() |
-                        act2_input22.getText().toString().isEmpty() | act2_input31.getText().toString().isEmpty() |  act2_input32.getText().toString().isEmpty()
-                |  act2_input41.getText().toString().isEmpty() |  act2_input42.getText().toString().isEmpty() |  act2_input51.getText().toString().isEmpty()
-                |  act2_input52.getText().toString().isEmpty())
-
-                {
-                    Toast.makeText(act2.this, "Please Enter All the fields", Toast.LENGTH_SHORT).show();
-
-                }
-                */
-
-
-                //else
-                {
-                    String path = Environment.getExternalStorageDirectory() +"/";
-
-                    try {
-
-
-
-                        File file = new File(path, "ca_home_act_2.txt");
-
-                        // FileOutputStream fileOutputStream = new FileOutputStream(file, true);
-                        // fileOutputStream.write("personal_user".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input11.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("personal_pass".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input12.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("bank_user".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input21.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("bank_pass".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input22.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("utility_user".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input31.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("utility_pass".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input32.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("work_user".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input41.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("work_pass".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input42.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("school_user".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input51.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-
-                        // fileOutputStream.write("school_pass".toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.write(act2_input52.getText().toString().getBytes());
-                        // fileOutputStream.write("\n".getBytes()[0]);
-                        // fileOutputStream.close();
-
-
-                        FileOutputStream fileOutputStream = new FileOutputStream(file, true);
-                        fileOutputStream.write("streaming_service_account_like_YouTube_user".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input11.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("streaming_service_account_like_YouTube_pass".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input12.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("gaming_user".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input21.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("gaming_pass".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input22.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("chat_account_to_communicate_with_friends_user".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input31.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("chat_account_to_communicate_with_friends_pass".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input32.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("bank_or_money_savings_user".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input41.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("bank_or_money_savings_pass".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input42.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("school_user".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input51.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-
-                        fileOutputStream.write("school_pass".toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.write(act2_input52.getText().toString().getBytes());
-                        fileOutputStream.write("\n".getBytes()[0]);
-                        fileOutputStream.close();
-
-
-
-
-
-                    }
-                    catch (FileNotFoundException e) {
-
-                        e.printStackTrace();
-                    }
-                    catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    Intent intent = new Intent(act2.this, com.example.ca_home.MainActivity.class);
-
-                    finishAffinity();
-                    Log.d("finished affinity","bvb");
-                    System.exit(0);
-                    Log.d("hbhy","exit");
-
-                }
-            }
-        });
-
-
-
-
-        act2_btn_restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                act2_input11.setText("");
-                act2_input12.setText("");
-                act2_input21.setText("");
-                act2_input22.setText("");
-                act2_input31.setText("");
-                act2_input32.setText("");
-                act2_input41.setText("");
-                act2_input42.setText("");
-                act2_input51.setText("");
-                act2_input52.setText("");
-
-            }
-        });
     }
 
+    private void initiateSocketConnection() {
+
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(SERVER_PATH).build();
+        webSocket = client.newWebSocket(request, new SocketListener());
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+        String string = s.toString().trim();
+
+        if (string.isEmpty()) {
+            resetMessageEdit();
+        } else {
+
+            sendBtn.setVisibility(View.VISIBLE);
+            pickImgBtn.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    private void resetMessageEdit() {
+
+        messageEdit.removeTextChangedListener(this);
+
+        messageEdit.setText("");
+        sendBtn.setVisibility(View.VISIBLE);
+        pickImgBtn.setVisibility(View.INVISIBLE);
+
+        messageEdit.addTextChangedListener(this);
+
+    }
+
+    private class SocketListener extends WebSocketListener {
+
+        @Override
+        public void onOpen(WebSocket webSocket, Response response) {
+            super.onOpen(webSocket, response);
+
+            runOnUiThread(() -> {
+                Toast.makeText(ChatActivity.this,
+                        "Socket Connection Successful!",
+                        Toast.LENGTH_SHORT).show();
+
+                initializeView();
+            });
+
+        }
+
+        @Override
+        public void onMessage(WebSocket webSocket, String text) {
+            super.onMessage(webSocket, text);
+
+            runOnUiThread(() -> {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(text);
+                    jsonObject.put("isSent", false);
+
+                    messageAdapter.addItem(jsonObject);
+
+                    recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+
+                    String path = Environment.getExternalStorageDirectory() +"/";
+                    File file = new File(path, "chat_Communication.txt");
+                    Date currentTime = Calendar.getInstance().getTime();
+                    String OutputReceived = jsonObject.toString() +String.valueOf(currentTime) + "\n";
+                    FileOutputStream fileOutputStream = null;
+                    try {
+                        fileOutputStream = new FileOutputStream(file, true);
+                        fileOutputStream.write(OutputReceived.getBytes());
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            });
+
+        }
+    }
+
+    private void initializeView() {
+
+        messageEdit = findViewById(R.id.messageEdit);
+        sendBtn = findViewById(R.id.sendBtn);
+        pickImgBtn = findViewById(R.id.pickImgBtn);
+
+        recyclerView = findViewById(R.id.recyclerView);
+
+        messageAdapter = new MessageAdapter(getLayoutInflater());
+        recyclerView.setAdapter(messageAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        messageEdit.addTextChangedListener(this);
+
+        sendBtn.setOnClickListener(v -> {
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("name", name);
+                jsonObject.put("message", messageEdit.getText().toString());
+
+                webSocket.send(jsonObject.toString());
+
+                jsonObject.put("isSent", true);
+                messageAdapter.addItem(jsonObject);
+
+                recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+
+                resetMessageEdit();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            String path = Environment.getExternalStorageDirectory() +"/";
+            File file = new File(path, "chat_Communication.txt");
+            Date currentTime = Calendar.getInstance().getTime();
+            String OutputReceived = jsonObject.toString() +String.valueOf(currentTime)+ "\n";
+            FileOutputStream fileOutputStream = null;
+            try {
+                fileOutputStream = new FileOutputStream(file, true);
+                fileOutputStream.write(OutputReceived.getBytes());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        pickImgBtn.setOnClickListener(v -> {
+
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("image/*");
+
+            startActivityForResult(Intent.createChooser(intent, "Pick image"),
+                    IMAGE_REQUEST_ID);
+
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IMAGE_REQUEST_ID && resultCode == RESULT_OK) {
+
+            try {
+                InputStream is = getContentResolver().openInputStream(data.getData());
+                Bitmap image = BitmapFactory.decodeStream(is);
+
+                sendImage(image);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    private void sendImage(Bitmap image) {
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 50, outputStream);
+
+        String base64String = Base64.encodeToString(outputStream.toByteArray(),
+                Base64.DEFAULT);
+
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("name", name);
+            jsonObject.put("image", base64String);
+
+            webSocket.send(jsonObject.toString());
+
+            jsonObject.put("isSent", true);
+
+            messageAdapter.addItem(jsonObject);
+
+            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
     private VelocityTracker mVelocityTracker = null;
     private int mActivePointerId;
     private int mActivePointerId2;
@@ -248,17 +283,21 @@ public class act2 extends AppCompatActivity {
     private float initialY;
     private float moveX;
     private float moveY;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-
+        //return super.onTouchEvent(event);
         int action = event.getActionMasked(); //event type
         int actionIndex = event.getActionIndex(); //pointer (finger, mouse ....)
         int pointerId = event.getPointerId(actionIndex);
 
         String path = Environment.getExternalStorageDirectory() +"/";
+        Log.d("Test", path);
 
-        File file = new File(path, "ca_home_MainActivity.txt");
+
+
+        File file = new File(path, "chat_MainActivity.txt");
 
 
         switch (action) {
@@ -279,12 +318,20 @@ public class act2 extends AppCompatActivity {
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(file, true);
                     fileOutputStream.write(xyDataDown.getBytes());
+                    /* fileOutputStream.write(String.valueOf(initialX).getBytes());
+                    fileOutputStream.write(descriptionOfData.getBytes());
+                    fileOutputStream.write(String.valueOf(initialY).getBytes());
+                    descriptionOfData = "Y value \n";
+                    fileOutputStream.write(descriptionOfData.getBytes());
+                    fileOutputStream.write(String.valueOf(currentTime).getBytes()); */
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
+                //Action = "Action was DOWN";
                 Log.d("Action", "Action was DOWN");
                 break;
 
@@ -322,6 +369,7 @@ public class act2 extends AppCompatActivity {
                         "X value " + finalX + "\n" +
                         "Y value " + finalY + "\n" ;
 
+                //Action = "Action was UP";
                 Log.d("Action", "Action was UP");
                 Log.d("Initial X", String.valueOf(initialX));
                 Log.d("final X", String.valueOf(finalX));
