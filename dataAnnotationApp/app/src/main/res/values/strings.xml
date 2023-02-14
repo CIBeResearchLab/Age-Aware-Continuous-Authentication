@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QA on video tasks</string>
+    <string name="close_text">Submitted and saved! Thank you! You can now continue to the next video or task.</string>
+    <string name="q1_text">Q1. After watching the video, select the most appropriate emoticon from the below options.</string>
+    <string name="q2_text">Q2. Did you feel better or worse than you were feeling before after watching the video?</string>
+    <string name="q3_text">Q3. On a scale of 0-5, how strong is this feeling? Mark 0 if your answer was "Same" for the above question.</string>
+    <string name="next_btn_text">Next</string>
+    <string name="prev_btn_text">Back</string>
+    <string name="neutral_lbl">Neutral</string>
+    <string name="happy_lbl">Happy</string>
+    <string name="disgust_lbl">Disgust</string>
+    <string name="surprise_lbl">Surprise</string>
+    <string name="angry_lbl">Angry</string>
+    <string name="fear_lbl">Fear</string>
+    <string name="sad_lbl">Sad</string>
+    <string name="better_rb_text">Better</string>
+    <string name="worse_rb_text">Worse</string>
+    <string name="same_rb_text">Same!</string>
+</resources>

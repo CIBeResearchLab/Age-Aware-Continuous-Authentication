@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".80"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02"/>
+
+
+    <Button
+        android:id="@+id/prev_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/prev_btn_text"
+        app:layout_constraintBottom_toBottomOf="@id/hor5"
+        app:layout_constraintEnd_toEndOf="@id/ver1"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor4" />
+
+    <TextView
+        android:id="@+id/q2_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/q2_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/hor1"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <TextView
+        android:id="@+id/q3_txt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/q3_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/hor6"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor2"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <RadioButton
+        android:id="@+id/better_rb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/better_rb_text"
+        app:layout_constraintBottom_toBottomOf="@+id/hor2"
+        app:layout_constraintEnd_toEndOf="@id/ver1"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@+id/hor1" />
+
+    <RadioButton
+        android:id="@+id/worse_rb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/worse_rb_text"
+        app:layout_constraintBottom_toBottomOf="@+id/hor2"
+        app:layout_constraintEnd_toEndOf="@id/ver2"
+        app:layout_constraintStart_toStartOf="@id/ver1"
+        app:layout_constraintTop_toTopOf="@+id/hor1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ver4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <RadioButton
+        android:id="@+id/same_rb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/same_rb_text"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hor2"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@+id/hor1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+<!--    <SeekBar-->
+<!--        android:id="@+id/seekBar"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/hor3"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/ver2"-->
+<!--        app:layout_constraintStart_toStartOf="@id/ver1"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/hor6"-->
+<!--        />-->
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/arousal_sb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:bsb_bubble_color="@color/cardview_light_background"
+        app:bsb_bubble_text_color="@color/colorPrimaryDark"
+        app:bsb_max="5.0"
+        app:bsb_min="0.0"
+        app:bsb_progress="0"
+        app:bsb_second_track_color="@color/black"
+        app:bsb_section_count="5"
+        app:bsb_section_text_position="bottom_sides"
+        app:bsb_show_progress_in_float="true"
+        app:bsb_show_section_mark="true"
+        app:bsb_show_section_text="true"
+        app:bsb_show_thumb_text="true"
+        app:bsb_track_color="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/hor3"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@+id/hor6" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Submit"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/hor5"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintStart_toStartOf="@id/ver2"
+        app:layout_constraintTop_toTopOf="@id/hor4"  />
+
+    <TextView
+        android:id="@+id/exit_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:text="@string/close_text"
+        app:layout_constraintBottom_toBottomOf="@id/hor4"
+        app:layout_constraintEnd_toEndOf="@id/ver4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/ver3"
+        app:layout_constraintTop_toTopOf="@id/hor3"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
